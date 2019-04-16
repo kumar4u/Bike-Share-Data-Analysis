@@ -163,6 +163,37 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def display_raw_data(df):
+    """
+    This Function is used to display the Raw data upon request by the user.
+    This Function prompt the user if they want to see 5 lines of raw data, display that data if the answer is 'yes',
+    and continue these prompts and displays until the user says 'no'.
+
+    args:
+        Passing the dataframe as an arugment in this function
+    return:
+        None
+    """
+    #Dropping the created columns (month,day,hour) used for previous analysis
+    df=df.drop(['month','day','hour'],axis=1)
+
+    row_count = 0
+
+    #getting the user input 'yes' or 'no' and also using the while loop to handle the invalid inputs.
+    while True:
+        ReadData = input("Do you want to see the actual 'RAW DATA\'? Please input 'yes' or 'no' \n").lower()
+        if ReadData in ['yes','no']:
+            break
+
+    while True:
+        if ReadData == 'no':
+            break
+        if ReadData == 'yes':
+            #Here using iloc for numerical indexing not the labeled index
+            print(df.iloc[row_count: row_count + 5])
+            row_count = row_count + 5
+        ReadData = input("\n Do you want to see 'five more records\' of the 'RAW DATA\'? Please input 'yes' or 'no' \n").lower()
+
 def main():
     while True:
         city, month, day = get_filters()
