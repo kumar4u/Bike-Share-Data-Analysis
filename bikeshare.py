@@ -14,6 +14,14 @@ months = ['january', 'february', 'march', 'april', 'may', 'june']
 days = ['sunday', 'monday', 'tuesday', 'wednesday','thursday', 'friday', 'saturday']
 
 def get_filters():
+    """
+    Asks user to specify a city, month, and day to analyze.
+
+    Returns:
+        (str) city - name of the city to analyze
+        (str) month - name of the month to filter by, or "all" to apply no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+    """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
@@ -122,6 +130,12 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
+    # TO DO: Display counts of user types
+    counts_of_user_types = dict(df['User Type'].value_counts())
+    print('Each user type counts from the given bikeshare data:\n')
+    for usertype,count in counts_of_user_types.items():
+        print(usertype,count)
+    print()
 
     # TO DO: Display counts of gender
     print('Gender counts from the given bikeshare data:\n')
