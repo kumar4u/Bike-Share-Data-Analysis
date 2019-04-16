@@ -164,6 +164,16 @@ def user_stats(df):
     print('-'*40)
 
 def display_raw_data(df):
+    """
+    This Function is used to display the Raw data upon request by the user.
+    This Function prompt the user if they want to see 5 lines of raw data, display that data if the answer is 'yes',
+    and continue these prompts and displays until the user says 'no'.
+
+    args:
+        Passing the dataframe as an arugment in this function
+    return:
+        None
+    """
     #Dropping the created columns (month,day,hour) used for previous analysis
     df=df.drop(['month','day','hour'],axis=1)
 
