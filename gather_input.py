@@ -1,7 +1,7 @@
 
 def get_input_from_user(message, user_list):
     """
-    An utility function to obtain user specific input value
+    An utility func to obtain user specific input value
 
     Args:
         (str) message - an information message for a particular request
