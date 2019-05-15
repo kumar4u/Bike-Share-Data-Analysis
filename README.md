@@ -10,9 +10,9 @@ Explore US Bikeshare Data
 The project allows to investigate different bikeshare datasets in 3 cities. The data can be viewed by month and by day.
 
 ### Files used
-chicago.csv
-new_york_city.csv
-washington.csv
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Credits
 https://stackoverflow.com/questions/23853553/python-pandas-how-to-read-only-first-n-rows-of-csv-files-in/23853569
